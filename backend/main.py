@@ -157,5 +157,9 @@ def main(page: ft.Page):
 
 # Executa o aplicativo Flet
 if __name__ == "__main__":
-    # Para rodar direto no navegador web por padrão, usamos view=ft.AppView.WEB_BROWSER
-    ft.run(main, view=ft.AppView.WEB_BROWSER)
+    import os
+    # O Render fornece a porta dinamicamente através da variável de ambiente 'PORT'
+    porta = int(os.environ.get("PORT", 8000))
+
+    # Força o Flet a rodar como um servidor web na porta correta
+    ft.app(target=main, view=ft.AppView.WEB_BROWSER, port=porta, host="0.0.0.0")
