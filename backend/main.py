@@ -162,4 +162,4 @@ if __name__ == "__main__":
     porta = int(os.environ.get("PORT", 8000))
 
     # Força o Flet a rodar como um servidor web na porta correta
-    ft.app(target=main, view=ft.AppView.WEB_BROWSER, port=porta, host="0.0.0.0")
+    ft.run(main, view=ft.AppView.WEB_BROWSER, port=porta, host="0.0.0.0")
